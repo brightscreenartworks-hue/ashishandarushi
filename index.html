@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashish & Arushi — Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Noto+Serif:ital,wght@0,600;0,700;1,400&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6efe3; --card:#fff; --line:#f3e3a6; --brown:#3d1d0c; --brown2:#5a3a22; --tan:#9a7a5a; --gold:#b98436;
+  --rust:#9a4a1c; --saffron:#b8520c; --ruby:#9b1c3a; --soft:#fff8e1; --green:#22c55e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#ece4d6;font-family:'Cinzel',serif;color:var(--brown)}
+.page{max-width:460px;margin:0 auto;background:var(--bg);box-shadow:0 0 40px rgba(80,50,20,.15);overflow:hidden;position:relative}
+section{position:relative;padding:56px 22px}
+a{color:inherit}
+
+/* --- Floating Music Button --- */
+.music-btn{
+  position:fixed;
+  top:18px;
+  right:18px;
+  z-index:1000;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:rgba(255,252,245,0.94);
+  border:1.5px solid #d9b171;
+  box-shadow:0 4px 18px rgba(100,50,20,0.22);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  color:#7a3d10;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+  outline:none;
+}
+.music-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 6px 22px rgba(100,50,20,0.3);
+  background:#fff;
+}
+.music-btn:active{transform:scale(0.95)}
+.music-btn .disc{
+  width:20px;
+  height:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.music-btn svg{
+  width:18px;
+  height:18px;
+  fill:#8a3f12;
+  transition:transform .3s ease;
+}
+.music-btn.playing svg{
+  animation:musicSpin 4s linear infinite;
+}
+@keyframes musicSpin{
+  100%{transform:rotate(360deg)}
+}
+.music-wave{
+  position:absolute;
+  bottom:-5px;
+  display:flex;
+  align-items:flex-end;
+  gap:2px;
+  height:10px;
+}
+.music-wave i{
+  width:2px;
+  height:3px;
+  background:#b87a2a;
+  border-radius:1px;
+  transition:height .2s ease;
+}
+.music-btn.playing .music-wave i:nth-child(1){animation:eqBar 0.8s ease-in-out infinite alternate}
+.music-btn.playing .music-wave i:nth-child(2){animation:eqBar 0.6s ease-in-out infinite alternate 0.2s}
+.music-btn.playing .music-wave i:nth-child(3){animation:eqBar 0.9s ease-in-out infinite alternate 0.4s}
+.music-btn.playing .music-wave i:nth-child(4){animation:eqBar 0.7s ease-in-out infinite alternate 0.1s}
+@keyframes eqBar{
+  0%{height:2px}
+  100%{height:10px}
+}
+
+/* ---------- 1. HERO ---------- */
+#hero{
+  padding:0;
+  aspect-ratio:768/1376;
+  width:100%;
+  background:#f1dfc0 url(hero.webp) center top/cover no-repeat;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero-in{
+  position:absolute;
+  left:0;
+  right:0;
+  top:46%;
+  transform:translateY(-50%);
+  padding:0 22px;
+  z-index:3;
+}
+.shloka{font-family:'Tiro Devanagari Hindi',serif;color:#7a4a1f;font-size:clamp(13px,3.6vw,16px);letter-spacing:.18em}
+.hn{font-family:'Cinzel',serif;font-weight:400;font-size:clamp(34px,10.5vw,46px);color:#2e1608;line-height:1.1;margin-top:10px;letter-spacing:.02em}
+.par{font-size:clamp(10px,2.8vw,12px);color:#6b4a30;letter-spacing:.04em;margin-top:5px}
+.amp{display:flex;align-items:center;justify-content:center;gap:14px;margin:12px 0 4px;color:var(--brown2);font-size:22px}
+.amp i{width:46px;height:1px;background:#c9a77a}
+.amp b{color:var(--ruby);font-size:14px;font-weight:400}
+
+/* --- Minimal Petal Shower --- */
+.petals-shower{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:2;
+}
+.petal{
+  position:absolute;
+  top:-32px;
+  will-change:transform,opacity,top;
+  pointer-events:none;
+}
+.petal svg{
+  display:block;
+  filter:drop-shadow(0 2px 4px rgba(110,30,20,.18));
+  animation:petalFlip ease-in-out infinite alternate;
+  transform-origin:center center;
+}
+@keyframes petalFlip{
+  0%  {transform:rotate3d(1,0.4,0.2,0deg) scale(0.9)}
+  50% {transform:rotate3d(0.4,1,0.6,180deg) scale(1.05)}
+  100%{transform:rotate3d(0.8,0.3,1,360deg) scale(0.9)}
+}
+@keyframes fall1{
+  0%  {top:-35px;transform:translateX(0);opacity:0}
+  10% {opacity:.88}
+  50% {transform:translateX(20px)}
+  90% {opacity:.88}
+  100%{top:104%;transform:translateX(-12px);opacity:0}
+}
+@keyframes fall2{
+  0%  {top:-35px;transform:translateX(0);opacity:0}
+  10% {opacity:.85}
+  50% {transform:translateX(-22px)}
+  90% {opacity:.85}
+  100%{top:104%;transform:translateX(15px);opacity:0}
+}
+@keyframes fall3{
+  0%  {top:-35px;transform:translateX(0);opacity:0}
+  10% {opacity:.88}
+  35% {transform:translateX(16px)}
+  75% {transform:translateX(-18px)}
+  90% {opacity:.88}
+  100%{top:104%;transform:translateX(6px);opacity:0}
+}
+
+/* --- Flying Small Butterflies at Bottom --- */
+.hero-butterflies{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:38%;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:4;
+}
+.bfly{
+  position:absolute;
+  pointer-events:none;
+  will-change:transform;
+  filter:drop-shadow(0 2px 5px rgba(60,25,10,.25));
+}
+.bfly-box{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  perspective:180px;
+}
+.bfly-wing{
+  width:14px;
+  height:20px;
+  display:block;
+}
+.bfly-left{
+  transform-origin:right center;
+  animation:flapL 0.2s ease-in-out infinite alternate;
+}
+.bfly-right{
+  transform-origin:left center;
+  animation:flapR 0.2s ease-in-out infinite alternate;
+}
+.bfly-torso{
+  width:2px;
+  height:13px;
+  background:#3e1e0a;
+  border-radius:2px;
+  margin:0 -1px;
+  z-index:2;
+  position:relative;
+}
+.bfly-torso::before{
+  content:"";
+  position:absolute;
+  top:-3px;
+  left:-1px;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:#3e1e0a;
+}
+@keyframes flapL{
+  0%  {transform:rotateY(0deg) rotateZ(-4deg)}
+  100%{transform:rotateY(65deg) rotateZ(6deg)}
+}
+@keyframes flapR{
+  0%  {transform:rotateY(0deg) rotateZ(4deg)}
+  100%{transform:rotateY(-65deg) rotateZ(-6deg)}
+}
+
+.bfly-1{
+  bottom:22%;
+  left:14%;
+  animation:bflyFlight1 8s ease-in-out infinite;
+}
+.bfly-2{
+  bottom:27%;
+  right:15%;
+  animation:bflyFlight2 9s ease-in-out infinite;
+}
+.bfly-3{
+  bottom:11%;
+  left:48%;
+  animation:bflyFlight3 7s ease-in-out infinite;
+}
+.bfly-4{
+  bottom:16%;
+  right:28%;
+  animation:bflyFlight4 8.5s ease-in-out infinite;
+}
+
+@keyframes bflyFlight1{
+  0%  {transform:translate(0,0) rotate(6deg) scale(0.9)}
+  25% {transform:translate(32px,-24px) rotate(-8deg) scale(0.95)}
+  50% {transform:translate(65px,-10px) rotate(10deg) scale(0.9)}
+  75% {transform:translate(28px,14px) rotate(-4deg) scale(0.85)}
+  100%{transform:translate(0,0) rotate(6deg) scale(0.9)}
+}
+@keyframes bflyFlight2{
+  0%  {transform:translate(0,0) rotate(-6deg) scale(0.85)}
+  30% {transform:translate(-32px,-20px) rotate(10deg) scale(0.9)}
+  60% {transform:translate(-58px,8px) rotate(-12deg) scale(0.82)}
+  85% {transform:translate(-18px,16px) rotate(4deg) scale(0.85)}
+  100%{transform:translate(0,0) rotate(-6deg) scale(0.85)}
+}
+@keyframes bflyFlight3{
+  0%  {transform:translate(0,0) rotate(8deg) scale(0.75)}
+  35% {transform:translate(25px,-18px) rotate(-10deg) scale(0.8)}
+  70% {transform:translate(-22px,-28px) rotate(8deg) scale(0.75)}
+  100%{transform:translate(0,0) rotate(8deg) scale(0.75)}
+}
+@keyframes bflyFlight4{
+  0%  {transform:translate(0,0) rotate(-4deg) scale(0.7)}
+  40% {transform:translate(-25px,-18px) rotate(8deg) scale(0.75)}
+  80% {transform:translate(26px,-8px) rotate(-8deg) scale(0.7)}
+  100%{transform:translate(0,0) rotate(-4deg) scale(0.7)}
+}
+
+/* ---------- loader ---------- */
+#loader{
+  position:fixed;
+  inset:0;
+  z-index:999;
+  background:var(--bg);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  transition:opacity .7s ease,visibility .7s;
+}
+#loader.hide{opacity:0;visibility:hidden;pointer-events:none}
+.lring{position:relative;width:118px;height:118px;display:flex;align-items:center;justify-content:center}
+.lring::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #efdfc2;border-top-color:var(--gold);animation:spin 1.3s linear infinite}
+.lring::after{content:"";position:absolute;inset:10px;border-radius:50%;border:1px dashed #d9bd85;animation:spin 6s linear infinite reverse}
+.lring span{font-size:22px;color:#5a3a22;letter-spacing:.06em;animation:breathe 2s ease-in-out infinite}
+#loader p{font-size:10px;letter-spacing:.35em;color:#a0601f}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes breathe{50%{opacity:.45}}
+
+/* ---------- shared headers ---------- */
+.kicker{text-align:center;font-size:11px;letter-spacing:.3em;color:#a0601f;font-weight:600;text-transform:uppercase}
+.spark{display:flex;justify-content:center;align-items:center;gap:8px;margin-bottom:8px}
+.spark i{width:40px;height:1px;background:linear-gradient(90deg,transparent,#d7b56a)}
+.spark i:last-child{transform:scaleX(-1)}
+.spark svg{width:16px;height:16px;stroke:#d9862b;fill:none;stroke-width:1.6}
+h2.big{font-family:'Cinzel',serif;font-weight:800;font-size:30px;line-height:1.15;text-align:center;color:#3a1606;margin-top:6px}
+
+/* ---------- 2. COUNTDOWN & VENUE ---------- */
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 44px}
+.cd div{background:#fff;border:1px solid #e9dcc8;border-radius:16px;text-align:center;padding:16px 4px 12px}
+.cd b{display:block;font-weight:400;font-size:26px;color:#3a2516}
+.cd span{font-size:10px;letter-spacing:.12em;color:#a3825f}
+.vcard{background:#fff;border:1px solid #e9dcc8;border-radius:22px;padding:26px 22px;text-align:center;margin-top:18px;box-shadow:0 4px 14px rgba(120,80,30,.06)}
+.vlabel{display:flex;justify-content:center;align-items:center;gap:8px;font-size:11px;letter-spacing:.25em;color:#a0601f;font-weight:600}
+.vlabel svg{width:16px;height:16px;stroke:#a0601f;fill:none;stroke-width:1.8}
+.vcard h3{font-weight:400;font-size:21px;color:#3a2516;margin:14px 0 8px}
+.vcard p{font-size:12.5px;color:#a07d5c;line-height:1.6}
+.vbtn{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:20px;padding:13px;border:1px solid #e3c27a;border-radius:30px;background:#f8ecd8;text-decoration:none;font-size:14px;color:#5a3a22;transition:background .3s}
+.vbtn:hover{background:#f2dfbf}
+.vbtn svg{width:16px;height:16px;stroke:#5a3a22;fill:none;stroke-width:1.8}
+
+/* ---------- 3. PROGRAM ---------- */
+.outer{background:#fff;border:1px solid var(--line);border-radius:30px;padding:30px 30px 34px;margin-top:30px;box-shadow:0 6px 24px rgba(120,80,30,.07)}
+.inner{border:1px solid var(--line);border-radius:26px;padding:28px 16px 30px;text-align:center}
+.ev .ic{width:40px;height:40px;border-radius:50%;background:var(--soft);border:1px solid #f0d78e;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.ev .ic svg{width:17px;height:17px;stroke:#a0601f;fill:none;stroke-width:1.8}
+.ev .lb{font-size:11px;letter-spacing:.22em;color:var(--rust);font-weight:700}
+.ev .val{font-family:'Noto Serif',serif;font-weight:700;font-size:25px;line-height:1.3;color:#1d120a;margin:6px 0 4px}
+.ev .ds{font-family:'Cormorant Garamond',serif;font-style:italic;font-variant:small-caps;font-size:15px;color:#6e5a48;letter-spacing:.06em}
+.sep{display:flex;align-items:center;justify-content:center;gap:10px;margin:22px 0;color:#d9a24a;font-size:10px}
+.sep i{width:80px;height:1px;background:linear-gradient(90deg,transparent,#ecd9a8)}
+.sep i:last-child{transform:scaleX(-1)}
+
+/* ---------- 4. MEMORIES (COUPLE FRAME) ---------- */
+.mem{background:#fff;border:1px solid var(--line);border-radius:28px;padding:30px 24px 34px;text-align:center}
+.mem .cname{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(24px,6.8vw,30px);color:#3a1606;letter-spacing:.05em;margin-top:6px}
+.frame{margin:22px auto 0;padding:8px;border:1px solid #eee3d0;border-radius:22px;background:#fff;box-shadow:0 8px 24px rgba(120,80,30,.1)}
+.frame .ph{aspect-ratio:2/3;border-radius:16px;border:1px solid #f0d78e;overflow:hidden;background:#fbf5ea}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
+
+/* ---------- 5. RSVP ---------- */
+.rs{background:#fff;border:1px solid var(--line);border-radius:30px;padding:30px 26px 30px}
+.rs h2{text-align:center;font-weight:700;font-size:22px;letter-spacing:.25em;color:#3a1606}
+.rs .intro{text-align:center;font-size:14px;color:#8a7766;line-height:1.5;margin:8px 0 22px}
+.rs .intro b{color:#8a3a10;font-weight:500}
+.fl{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;color:#6b2e0e;margin:18px 0 8px}
+.fl em{color:#d0473a;font-style:normal}
+.fl small{font-weight:400;color:#a3907d;letter-spacing:.05em}
+.inp{display:flex;align-items:center;gap:10px;border:1px solid #f4dc96;background:#fffdf3;border-radius:16px;padding:0 14px}
+.inp svg{width:16px;height:16px;stroke:#c0712b;fill:none;stroke-width:1.8;flex:none}
+.inp input,textarea{flex:1;border:0;background:transparent;padding:14px 0;font-family:'Cinzel',serif;font-size:13px;color:var(--brown);outline:none;width:100%}
+textarea{border:1px solid #f4dc96;background:#fffdf3;border-radius:16px;padding:14px;resize:vertical;min-height:84px}
+::placeholder{color:#b9aa98}
+.att{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.att button{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 8px;border-radius:16px;border:1px solid #f4dc96;background:#fff;font-family:'Cinzel',serif;font-size:12.5px;color:#9a8a78;cursor:pointer;line-height:1.3;transition:.25s}
+.att button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;flex:none}
+.att button.on{background:var(--saffron);border-color:var(--saffron);color:#fff;font-weight:700;box-shadow:0 6px 14px rgba(184,82,12,.3)}
+.gc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.gc button{padding:11px 0;border-radius:12px;border:1px solid #f4dc96;background:#fff;font-family:'Cinzel',serif;font-size:14px;color:#5a3a22;cursor:pointer;transition:.25s}
+.gc button.on{background:var(--saffron);border-color:var(--saffron);color:#fff;font-weight:700}
+.send{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;padding:16px;border-radius:18px;background:linear-gradient(90deg,#25d366,#1fbe5a);color:#fff;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.05em;box-shadow:0 8px 18px rgba(34,197,94,.3);transition:transform .25s}
+.send:hover{transform:translateY(-2px)}
+.send svg{width:18px;height:18px}
+.rcp{text-align:center;margin-top:14px;font-size:10px;letter-spacing:.12em;color:#8a7766;font-weight:600}
+.rcp a{display:inline-block;margin:6px 6px 0;font-family:ui-monospace,monospace;font-size:13px;color:#2a1a10;letter-spacing:.04em}
+
+/* ---------- 6. FOOTER ---------- */
+#closing{text-align:center;padding:70px 30px 80px}
+.mcircle{width:56px;height:56px;margin:0 auto;border-radius:50%;background:#fff;border:1px solid #e9dcc8;display:flex;align-items:center;justify-content:center;font-size:14px;color:#5a3a22;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+#closing p{font-size:13.5px;color:#8a7766;line-height:1.55;margin:22px auto 0;max-width:280px}
+.heart{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:22px}
+.heart i{width:48px;height:1px;background:#e8cf8a}
+.heart svg{width:12px;height:12px;fill:var(--ruby)}
+
+/* ---------- motion ---------- */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+
+.hero-in>*{
+  opacity:0;
+  transform:translateY(22px);
+  will-change:transform,opacity;
+}
+body.loaded .hero-in>*{
+  animation:heroUp .95s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+body.loaded .hero-in>*:nth-child(1){animation-delay:.15s}
+body.loaded .hero-in>*:nth-child(2){animation-delay:.38s}
+body.loaded .hero-in>*:nth-child(3){animation-delay:.62s}
+body.loaded .hero-in>*:nth-child(4){animation-delay:.85s}
+body.loaded .hero-in>*:nth-child(5){animation-delay:1.08s}
+body.loaded .hero-in>*:nth-child(6){animation-delay:1.32s}
+
+@keyframes heroUp{
+  from{opacity:0;transform:translateY(22px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv,.hero-in>*{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<!-- Audio element configured to loop -->
+<audio id="bgMusic" src="music.mp3" preload="auto" loop playsinline></audio>
+
+<!-- Floating Music Toggle Button -->
+<button class="music-btn" id="musicBtn" aria-label="Play Music" title="Play / Pause Music">
+  <div class="disc">
+    <svg viewBox="0 0 24 24" class="icon-play">
+      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+    </svg>
+    <svg viewBox="0 0 24 24" class="icon-mute" style="display:none">
+      <path d="M4.27 3L3 4.27l9 9v.28c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4v-1.73l4.73 4.73c-.56.46-1.24.78-1.99.92v2.02c1.3-.23 2.49-.86 3.44-1.73L19.73 21 21 19.73 4.27 3zM14 7h4V3h-6v5.18l2 2V7z"/>
+    </svg>
+  </div>
+  <span class="music-wave">
+    <i></i><i></i><i></i><i></i>
+  </span>
+</button>
+
+<!-- SVG Gradients for Petals & Butterflies -->
+<svg width="0" height="0" style="position:absolute;visibility:hidden" aria-hidden="true">
+  <defs>
+    <linearGradient id="pGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff758c"/>
+      <stop offset="55%" stop-color="#c9184a"/>
+      <stop offset="100%" stop-color="#800f2f"/>
+    </linearGradient>
+    <linearGradient id="pGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb3c1"/>
+      <stop offset="60%" stop-color="#e25372"/>
+      <stop offset="100%" stop-color="#9d174d"/>
+    </linearGradient>
+    <linearGradient id="pGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fed7aa"/>
+      <stop offset="60%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="pGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#e76f51"/>
+    </linearGradient>
+    <linearGradient id="bfGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="45%" stop-color="#e76f51"/>
+      <stop offset="100%" stop-color="#9b1c3a"/>
+    </linearGradient>
+    <linearGradient id="bfGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div id="loader"><div class="lring"><span id="lmono"></span></div><p>LOADING</p></div>
+<div class="page" id="app"></div>
+
+<script>
+/* ============ EDIT ALL TEXT HERE ============ */
+const DATA = {
+  shloka: "॥ श्री गणेशाय नमः ॥",
+  groom: { name: "Ashish", parents: "Son of Mrs Rama Kanti & Late M.L. Rawat" },
+  bride: { name: "Arushi", parents: "Daughter of Mrs Maya Chandra & Mr Sunil Chandra" },
+  heroDate: "Saturday, 12 December 2026",
+  heroTime: "6:00 PM",
+  countdownTo: "2026-12-12T18:00:00+05:30",
+  venues: [
+    { label: "Auspicious Venue", name: "The Grand CASA", address: "Near Delhi Public School, Shaheed Path, Lucknow",
+      map: "The Grand CASA, Shaheed Path, Lucknow" },
+    { label: "Reception Venue", name: "Amar Milan Utsav Lawn", address: "Near Sky Public School, Bijnaur Road, Sarojini Nagar, Lucknow",
+      map: "Amar Milan Utsav Lawn, Bijnaur Road, Sarojini Nagar, Lucknow" }
+  ],
+  program: [
+    { icon: "cal",   label: "The Date",            value: "Saturday, 12 December 2026", desc: "Auspicious wedding ceremony" },
+    { icon: "clock", label: "Baraat",              value: "6:00 PM",                    desc: "The royal procession arrives" },
+    { icon: "heart", label: "Dinner",              value: "8:00 PM Onwards",            desc: "Culinary feast, music & blessings" },
+    { icon: "cal",   label: "Reception",           value: "Tuesday, 15 December 2026",  desc: "An evening of celebration" },
+    { icon: "clock", label: "Reception Timings",   value: "7:00 PM Onwards",            desc: "Amar Milan Utsav Lawn, Lucknow" }
+  ],
+  couplePhoto: "couple.jpg",
+  rsvp: { family: "Rawat Family", phones: ["8953043463", "9599425181"], cc: "91" },
+  monogram: "A & A",
+  closing: "We seek your blessings and gracious presence as we begin our new journey together."
+};
+/* ============================================ */
+
+const I = {
+  cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  heart:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+  pin:'<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+  ext:'<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
+  spark:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 3v4M17 5h4M5 17v3M3.5 18.5h3"/>',
+  user:'<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/>',
+  ok:'<circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/>',
+  no:'<circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/>'
+};
+const ic = k => `<svg viewBox="0 0 24 24">${I[k]}</svg>`;
+const sparkHead = `<div class="spark"><i></i>${ic('spark')}<i></i></div>`;
+const mapUrl = q => "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(q);
+const waUrl = (n, m) => `https://wa.me/${DATA.rsvp.cc}${n}?text=${encodeURIComponent(m)}`;
+const WA = '<svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.7-.3z"/></svg>';
+
+/* --- Petals config for minimal shower --- */
+const petals = [
+  { left: 7,  w: 16, h: 20, grad: "pGrad1", dur: 6.8, del: -1.2, fall: 1, flipDur: 3.2 },
+  { left: 17, w: 14, h: 18, grad: "pGrad2", dur: 7.5, del: -4.5, fall: 2, flipDur: 2.8 },
+  { left: 27, w: 18, h: 22, grad: "pGrad3", dur: 8.2, del: -2.1, fall: 3, flipDur: 3.6 },
+  { left: 37, w: 15, h: 19, grad: "pGrad1", dur: 6.2, del: -5.3, fall: 1, flipDur: 2.9 },
+  { left: 47, w: 19, h: 23, grad: "pGrad2", dur: 7.8, del: -0.8, fall: 2, flipDur: 3.4 },
+  { left: 57, w: 14, h: 17, grad: "pGrad4", dur: 6.5, del: -3.7, fall: 3, flipDur: 2.6 },
+  { left: 67, w: 17, h: 21, grad: "pGrad1", dur: 7.2, del: -5.9, fall: 1, flipDur: 3.1 },
+  { left: 77, w: 15, h: 18, grad: "pGrad3", dur: 8.0, del: -2.4, fall: 2, flipDur: 3.5 },
+  { left: 87, w: 18, h: 22, grad: "pGrad2", dur: 6.9, del: -4.0, fall: 3, flipDur: 2.7 },
+  { left: 12, w: 15, h: 19, grad: "pGrad4", dur: 7.6, del: -3.1, fall: 2, flipDur: 3.3 },
+  { left: 52, w: 16, h: 20, grad: "pGrad1", dur: 8.5, del: -6.2, fall: 1, flipDur: 3.0 },
+  { left: 82, w: 14, h: 18, grad: "pGrad2", dur: 7.1, del: -1.8, fall: 3, flipDur: 2.8 }
+];
+
+/* --- Butterfly wing SVG builder --- */
+const bflySVG = grad => `
+  <div class="bfly-box">
+    <svg class="bfly-wing bfly-left" viewBox="0 0 20 28">
+      <path d="M19,14 C17,7 10,1 2,3 C-1,4 0,11 6,14 C0,16 -1,23 3,26 C9,29 17,23 19,14 Z" fill="url(#${grad})"/>
+      <circle cx="6" cy="7" r="1.5" fill="#fff" opacity="0.8"/>
+      <circle cx="5" cy="22" r="1.2" fill="#fff" opacity="0.8"/>
+    </svg>
+    <div class="bfly-torso"></div>
+    <svg class="bfly-wing bfly-right" viewBox="0 0 20 28">
+      <path d="M1,14 C3,7 10,1 18,3 C21,4 20,11 14,14 C20,16 21,23 17,26 C11,29 3,23 1,14 Z" fill="url(#${grad})"/>
+      <circle cx="14" cy="7" r="1.5" fill="#fff" opacity="0.8"/>
+      <circle cx="15" cy="22" r="1.2" fill="#fff" opacity="0.8"/>
+    </svg>
+  </div>
+`;
+
+/* --- sections --- */
+const S = [];
+
+/* 1. HERO with centered text, petal shower, and butterflies at bottom */
+S.push(`<section id="hero">
+  <div class="petals-shower" aria-hidden="true">
+    ${petals.map(p => `
+      <div class="petal" style="left:${p.left}%;animation:fall${p.fall} ${p.dur}s linear infinite;animation-delay:${p.del}s;">
+        <svg viewBox="0 0 24 24" style="width:${p.w}px;height:${p.h}px;animation-duration:${p.flipDur}s">
+          <path d="M12,2 C18,6 22,14 17,21 C12,25 6,23 4,16 C2,10 6,4 12,2 Z" fill="url(#${p.grad})"/>
+        </svg>
+      </div>`).join('')}
+  </div>
+
+  <div class="hero-butterflies" aria-hidden="true">
+    <div class="bfly bfly-1">${bflySVG('bfGrad1')}</div>
+    <div class="bfly bfly-2">${bflySVG('bfGrad2')}</div>
+    <div class="bfly bfly-3">${bflySVG('bfGrad1')}</div>
+    <div class="bfly bfly-4">${bflySVG('bfGrad2')}</div>
+  </div>
+
+  <div class="hero-in">
+    <p class="shloka">${DATA.shloka}</p>
+    <h1 class="hn">${DATA.groom.name}</h1>
+    <p class="par">${DATA.groom.parents}</p>
+    <div class="amp"><i></i><b>✦</b>&amp;<b>✦</b><i></i></div>
+    <h1 class="hn" style="margin-top:0">${DATA.bride.name}</h1>
+    <p class="par">${DATA.bride.parents}</p>
+  </div>
+</section>`);
+
+/* 2. PROGRAM */
+S.push(`<section id="program"><div class="rv">${sparkHead}<p class="kicker">Sacred Auspicious Program</p><h2 class="big">Program of Celebrations</h2></div>
+  <div class="outer rv"><div class="inner">${DATA.program.map((e,i)=>`${i?'<div class="sep"><i></i>✦<i></i></div>':''}
+    <div class="ev"><div class="ic">${ic(e.icon)}</div><p class="lb">${e.label.toUpperCase()}</p><p class="val">${e.value}</p><p class="ds">${e.desc}</p></div>`).join('')}
+  </div></div></section>`);
+
+/* 3. MUHURTHAM & VENUE */
+S.push(`<section id="muhurtham"><p class="kicker rv">The Auspicious Muhurtham</p>
+  <div class="cd rv" id="cd">${["Days","Hrs","Min","Sec"].map(u=>`<div><b>00</b><span>${u.toUpperCase()}</span></div>`).join('')}</div>
+  ${DATA.venues.map(v=>`<div class="vcard rv"><div class="vlabel">${ic('pin')}${v.label.toUpperCase()}</div><h3>${v.name}</h3><p>${v.address}</p>
+    <a class="vbtn" href="${mapUrl(v.map)}" target="_blank" rel="noopener">${ic('ext')}Get Directions</a></div>`).join('')}</section>`);
+
+/* 4. MEMORIES (COUPLE FRAME WITH ONLY COUPLE NAME) */
+S.push(`<section id="memories">
+  <div class="mem rv">
+    ${sparkHead}
+    <h2 class="cname">${DATA.groom.name} &amp; ${DATA.bride.name}</h2>
+    <div class="frame">
+      <div class="ph">
+        <img src="${DATA.couplePhoto}" alt="${DATA.groom.name} &amp; ${DATA.bride.name}">
+      </div>
+    </div>
+  </div>
+</section>`);
+
+/* 5. RSVP */
+S.push(`<section id="rsvp"><div class="rs rv">${sparkHead}<h2>RSVP</h2>
+  <p class="intro">Kindly respond to let <b>${DATA.groom.name} & ${DATA.bride.name}</b> know if you can join</p>
+  <label class="fl">YOUR FULL NAME <em>*</em></label><div class="inp">${ic('user')}<input id="rName" placeholder="E.G. SAMEER & FAMILY"></div>
+  <label class="fl">WILL YOU ATTEND?</label>
+  <div class="att" id="rAtt"><button class="on" data-v="Joyfully Accept">${ic('ok')}Joyfully Accept</button><button data-v="Regretfully Decline">${ic('no')}Regretfully Decline</button></div>
+  <label class="fl">NUMBER OF GUESTS</label>
+  <div class="gc" id="rCnt">${["1","2","3","4","5+"].map((n,i)=>`<button ${i?'':'class="on"'} data-v="${n}">${n}</button>`).join('')}</div>
+  <label class="fl">HEARTFELT WISH <small>(OPTIONAL)</small></label><textarea id="rMsg" placeholder="SHARE A BLESSING OR NOTE FOR THE COUPLE..."></textarea>
+  <a class="send" id="rSend" target="_blank" rel="noopener">${WA}SEND RSVP VIA WHATSAPP</a>
+  <p class="rcp">RSVP · ${DATA.rsvp.family.toUpperCase()}<br>${DATA.rsvp.phones.map(n=>`<a href="${waUrl(n,`Namaste ${DATA.rsvp.family} 🙏`)}" target="_blank" rel="noopener">${DATA.rsvp.cc}${n}</a>`).join('')}</p>
+  </div></section>`);
+
+/* 6. CLOSING */
+S.push(`<section id="closing"><div class="rv"><div class="mcircle">${DATA.monogram}</div><p>${DATA.closing}</p>
+  <div class="heart"><i></i><svg viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11z"/></svg><i></i></div></div></section>`);
+
+document.getElementById("app").innerHTML = S.join("");
+
+/* --- behaviour --- */
+const $ = s => document.querySelector(s);
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .15 });
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+
+const end = new Date(DATA.countdownTo).getTime(), cells = document.querySelectorAll("#cd b");
+(function tick(){
+  const left = Math.max(0, end - Date.now());
+  [864e5, 36e5, 6e4, 1e3].reduce((r, u, i) => { cells[i].textContent = String(Math.floor(r / u)).padStart(2, "0"); return r % u; }, left);
+  if (left) setTimeout(tick, 1000);
+})();
+
+const pick = id => $(id + " .on").dataset.v;
+["#rAtt", "#rCnt"].forEach(id => $(id).addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  $(id).querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b)); upd();
+}));
+function upd(){
+  const name = $("#rName").value.trim() || "Guest", wish = $("#rMsg").value.trim();
+  $("#rSend").href = waUrl(DATA.rsvp.phones[0],
+    `🙏 RSVP — Wedding of ${DATA.groom.name} & ${DATA.bride.name}\nName: ${name}\nAttending: ${pick("#rAtt")}\nGuests: ${pick("#rCnt")}` + (wish ? `\nWish: ${wish}` : ""));
+}
+["#rName", "#rMsg"].forEach(id => $(id).addEventListener("input", upd)); upd();
+
+/* --- Music Player Control (starts at 45 seconds) --- */
+const audio = document.getElementById("bgMusic");
+const mBtn = document.getElementById("musicBtn");
+const iconPlay = mBtn.querySelector(".icon-play");
+const iconMute = mBtn.querySelector(".icon-mute");
+let seekedTo45 = false;
+let musicStarted = false;
+
+function set45s() {
+  if (!seekedTo45) {
+    try {
+      audio.currentTime = 45;
+      seekedTo45 = true;
+    } catch(e) {}
+  }
+}
+
+audio.addEventListener("loadedmetadata", set45s);
+audio.addEventListener("canplay", set45s);
+
+function updateMusicUI(playing) {
+  if (playing) {
+    mBtn.classList.add("playing");
+    iconPlay.style.display = "block";
+    iconMute.style.display = "none";
+    mBtn.setAttribute("aria-label", "Pause Music");
+  } else {
+    mBtn.classList.remove("playing");
+    iconPlay.style.display = "none";
+    iconMute.style.display = "block";
+    mBtn.setAttribute("aria-label", "Play Music");
+  }
+}
+
+function playMusic() {
+  set45s();
+  const p = audio.play();
+  if (p !== undefined) {
+    p.then(() => {
+      musicStarted = true;
+      updateMusicUI(true);
+    }).catch(() => {
+      // Autoplay blocked by browser policy; will trigger on user interaction
+      updateMusicUI(false);
+    });
+  }
+}
+
+function toggleMusic(e) {
+  if (e) e.stopPropagation();
+  if (audio.paused) {
+    playMusic();
+  } else {
+    audio.pause();
+    updateMusicUI(false);
+  }
+}
+
+mBtn.addEventListener("click", toggleMusic);
+
+// If browser blocks initial autoplay, start playing from 45s on first touch/click/scroll
+const startOnFirstGesture = () => {
+  if (audio.paused) {
+    playMusic();
+  }
+};
+["click", "touchstart", "touchend", "scroll", "pointerdown", "keydown"].forEach(ev => {
+  window.addEventListener(ev, startOnFirstGesture, { once: true, passive: true });
+});
+
+/* --- Loader & Smooth Entrance Animation --- */
+$("#lmono").textContent = DATA.monogram;
+let revealed = false;
+const revealPage = () => {
+  if (revealed) return;
+  revealed = true;
+  const loader = $("#loader");
+  if (loader) {
+    loader.classList.add("hide");
+    setTimeout(() => { try { loader.remove(); } catch(e){} }, 750);
+  }
+  document.body.classList.add("loaded");
+  // Trigger music playback right as page reveals
+  playMusic();
+};
+
+const heroImg = new Image();
+heroImg.src = "hero.webp";
+Promise.all([
+  new Promise(r => {
+    if (heroImg.complete) r();
+    else heroImg.onload = heroImg.onerror = r;
+  }),
+  document.fonts ? document.fonts.ready : 0
+]).then(() => {
+  setTimeout(revealPage, 250);
+});
+setTimeout(revealPage, 1600);
+</script>
+</body>
+</html>

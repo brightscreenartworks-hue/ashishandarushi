@@ -1,44 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ashish &amp; Arushi — Wedding Invitation</title>
-<meta name="title" content="Ashish &amp; Arushi — Wedding Invitation">
-<meta name="description" content="We invite you to celebrate the wedding of Ashish &amp; Arushi on Saturday, 12 December 2026. Join us for the celebrations!">
-<meta name="theme-color" content="#b98436">
-
-<!-- Schema.org / Google / Messaging Fallback -->
-<meta itemprop="name" content="Ashish &amp; Arushi — Wedding Invitation">
-<meta itemprop="description" content="We invite you to celebrate the wedding of Ashish &amp; Arushi on Saturday, 12 December 2026. Join us for the celebrations!">
-<meta itemprop="image" content="https://ashishandarushi-ibk9.vercel.app/preview.jpg">
-
-<!-- Open Graph / Facebook / WhatsApp -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ashishandarushi-ibk9.vercel.app/">
-<meta property="og:site_name" content="Ashish &amp; Arushi Wedding">
-<meta property="og:title" content="Ashish &amp; Arushi — Wedding Invitation">
-<meta property="og:description" content="We invite you to celebrate the wedding of Ashish &amp; Arushi on Saturday, 12 December 2026. Join us for the celebrations!">
-<meta property="og:image" content="https://ashishandarushi-ibk9.vercel.app/preview.jpg">
-<meta property="og:image:secure_url" content="https://ashishandarushi-ibk9.vercel.app/preview.jpg">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ashish &amp; Arushi Wedding Invitation">
-
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://ashishandarushi-ibk9.vercel.app/">
-<meta name="twitter:title" content="Ashish &amp; Arushi — Wedding Invitation">
-<meta name="twitter:description" content="We invite you to celebrate the wedding of Ashish &amp; Arushi on Saturday, 12 December 2026. Join us for the celebrations!">
-<meta name="twitter:image" content="https://ashishandarushi-ibk9.vercel.app/preview.jpg">
-
-<!-- Favicon / Thumbnail Link -->
-<link rel="icon" type="image/jpeg" href="preview.jpg">
-<link rel="apple-touch-icon" href="preview.jpg">
-<link rel="image_src" href="https://ashishandarushi-ibk9.vercel.app/preview.jpg">
+<title>Ashish & Arushi — Wedding Invitation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Noto+Serif:ital,wght@0,600;0,700;1,400&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Noto+Serif:ital,wght@0,600;0,700;1,400&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f6efe3; --card:#fff; --line:#f3e3a6; --brown:#3d1d0c; --brown2:#5a3a22; --tan:#9a7a5a; --gold:#b98436;
@@ -50,77 +17,6 @@ body{background:#ece4d6;font-family:'Cinzel',serif;color:var(--brown)}
 .page{max-width:460px;margin:0 auto;background:var(--bg);box-shadow:0 0 40px rgba(80,50,20,.15);overflow:hidden;position:relative}
 section{position:relative;padding:56px 22px}
 a{color:inherit}
-
-/* --- Floating Music Button --- */
-.music-btn{
-  position:fixed;
-  top:18px;
-  right:18px;
-  z-index:1000;
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  background:rgba(255,252,245,0.94);
-  border:1.5px solid #d9b171;
-  box-shadow:0 4px 18px rgba(100,50,20,0.22);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  color:#7a3d10;
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
-  transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
-  outline:none;
-}
-.music-btn:hover{
-  transform:scale(1.08);
-  box-shadow:0 6px 22px rgba(100,50,20,0.3);
-  background:#fff;
-}
-.music-btn:active{transform:scale(0.95)}
-.music-btn .disc{
-  width:20px;
-  height:20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.music-btn svg{
-  width:18px;
-  height:18px;
-  fill:#8a3f12;
-  transition:transform .3s ease;
-}
-.music-btn.playing svg{
-  animation:musicSpin 4s linear infinite;
-}
-@keyframes musicSpin{
-  100%{transform:rotate(360deg)}
-}
-.music-wave{
-  position:absolute;
-  bottom:-5px;
-  display:flex;
-  align-items:flex-end;
-  gap:2px;
-  height:10px;
-}
-.music-wave i{
-  width:2px;
-  height:3px;
-  background:#b87a2a;
-  border-radius:1px;
-  transition:height .2s ease;
-}
-.music-btn.playing .music-wave i:nth-child(1){animation:eqBar 0.8s ease-in-out infinite alternate}
-.music-btn.playing .music-wave i:nth-child(2){animation:eqBar 0.6s ease-in-out infinite alternate 0.2s}
-.music-btn.playing .music-wave i:nth-child(3){animation:eqBar 0.9s ease-in-out infinite alternate 0.4s}
-.music-btn.playing .music-wave i:nth-child(4){animation:eqBar 0.7s ease-in-out infinite alternate 0.1s}
-@keyframes eqBar{
-  0%{height:2px}
-  100%{height:10px}
-}
 
 /* ---------- 1. HERO ---------- */
 #hero{
@@ -136,17 +32,59 @@ a{color:inherit}
   position:absolute;
   left:0;
   right:0;
-  top:46%;
-  transform:translateY(-50%);
+  top:23.5%;
   padding:0 22px;
   z-index:3;
 }
-.shloka{font-family:'Tiro Devanagari Hindi',serif;color:#7a4a1f;font-size:clamp(13px,3.6vw,16px);letter-spacing:.18em}
-.hn{font-family:'Cinzel',serif;font-weight:400;font-size:clamp(34px,10.5vw,46px);color:#2e1608;line-height:1.1;margin-top:10px;letter-spacing:.02em}
-.par{font-size:clamp(10px,2.8vw,12px);color:#6b4a30;letter-spacing:.04em;margin-top:5px}
-.amp{display:flex;align-items:center;justify-content:center;gap:14px;margin:12px 0 4px;color:var(--brown2);font-size:22px}
-.amp i{width:46px;height:1px;background:#c9a77a}
-.amp b{color:var(--ruby);font-size:14px;font-weight:400}
+.shloka{
+  font-family:'Tiro Devanagari Hindi',serif;
+  color:#7a4a1f;
+  font-size:clamp(13px,3.6vw,16px);
+  letter-spacing:.18em;
+}
+.invitation-text{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  color:#5d3a1f;
+  font-size:clamp(12px,3.2vw,14px);
+  line-height:1.45;
+  max-width:320px;
+  margin:10px auto 10px;
+  letter-spacing:.02em;
+}
+.hn{
+  font-family:'Cinzel',serif;
+  font-weight:500;
+  font-size:clamp(28px,8.5vw,38px);
+  color:#2e1608;
+  line-height:1.1;
+  letter-spacing:.02em;
+}
+.par{
+  font-size:clamp(10px,2.7vw,11.5px);
+  color:#6b4a30;
+  letter-spacing:.03em;
+  margin-top:4px;
+}
+.weds{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin:10px 0 8px;
+}
+.weds i{
+  width:38px;
+  height:1px;
+  background:#c9a77a;
+}
+.weds span{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:clamp(16px,4.5vw,20px);
+  color:var(--ruby);
+  letter-spacing:.05em;
+}
 
 /* --- Minimal Petal Shower --- */
 .petals-shower{
@@ -353,12 +291,13 @@ h2.big{font-family:'Cinzel',serif;font-weight:800;font-size:30px;line-height:1.1
 .vbtn svg{width:16px;height:16px;stroke:#5a3a22;fill:none;stroke-width:1.8}
 
 /* ---------- 3. PROGRAM ---------- */
-.outer{background:#fff;border:1px solid var(--line);border-radius:30px;padding:30px 30px 34px;margin-top:30px;box-shadow:0 6px 24px rgba(120,80,30,.07)}
+.outer{background:#fff;border:1px solid var(--line);border-radius:30px;padding:30px 30px 34px;margin-top:24px;box-shadow:0 6px 24px rgba(120,80,30,.07)}
 .inner{border:1px solid var(--line);border-radius:26px;padding:28px 16px 30px;text-align:center}
 .ev .ic{width:40px;height:40px;border-radius:50%;background:var(--soft);border:1px solid #f0d78e;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
 .ev .ic svg{width:17px;height:17px;stroke:#a0601f;fill:none;stroke-width:1.8}
 .ev .lb{font-size:11px;letter-spacing:.22em;color:var(--rust);font-weight:700}
-.ev .val{font-family:'Noto Serif',serif;font-weight:700;font-size:25px;line-height:1.3;color:#1d120a;margin:6px 0 4px}
+.ev .val{font-family:'Noto Serif',serif;font-weight:700;font-size:24px;line-height:1.3;color:#1d120a;margin:6px 0 4px}
+.ev .val .sub-day{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:18px;color:#8a4f1a;letter-spacing:.04em;margin-top:3px}
 .ev .ds{font-family:'Cormorant Garamond',serif;font-style:italic;font-variant:small-caps;font-size:15px;color:#6e5a48;letter-spacing:.06em}
 .sep{display:flex;align-items:center;justify-content:center;gap:10px;margin:22px 0;color:#d9a24a;font-size:10px}
 .sep i{width:80px;height:1px;background:linear-gradient(90deg,transparent,#ecd9a8)}
@@ -374,30 +313,40 @@ h2.big{font-family:'Cinzel',serif;font-weight:800;font-size:30px;line-height:1.1
 /* ---------- 5. RSVP ---------- */
 .rs{background:#fff;border:1px solid var(--line);border-radius:30px;padding:30px 26px 30px}
 .rs h2{text-align:center;font-weight:700;font-size:22px;letter-spacing:.25em;color:#3a1606}
-.rs .intro{text-align:center;font-size:14px;color:#8a7766;line-height:1.5;margin:8px 0 22px}
-.rs .intro b{color:#8a3a10;font-weight:500}
-.fl{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;color:#6b2e0e;margin:18px 0 8px}
-.fl em{color:#d0473a;font-style:normal}
-.fl small{font-weight:400;color:#a3907d;letter-spacing:.05em}
+.rsvp-family{font-family:'Cinzel',serif;font-weight:700;font-size:20px;color:#3a1606;letter-spacing:.08em;margin:12px 0 6px}
+.rsvp-contact{font-size:14px;color:#7a4a1f;letter-spacing:.06em}
+.rsvp-phone{font-family:ui-monospace,monospace;font-size:16px;font-weight:700;color:#2e1608;text-decoration:none;border-bottom:1px dashed #c9a77a;padding-bottom:1px}
+.rsvp-wa-pill{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:10px 20px;border-radius:22px;background:#25d366;color:#fff;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.04em;box-shadow:0 4px 12px rgba(37,211,102,.25);transition:transform .2s}
+.rsvp-wa-pill:hover{transform:translateY(-1px)}
+.rsvp-wa-pill svg{width:16px;height:16px}
+
+/* ---------- 6. WISHES / BLESSINGS ---------- */
+.wtitle{text-align:center;font-size:13px;letter-spacing:.18em;font-weight:700;color:#5a2c10;margin-bottom:18px;text-transform:uppercase}
+.wish{position:relative;background:#fff;border:2px solid #f7e2a0;border-radius:18px;padding:16px 18px 18px;margin-bottom:14px;box-shadow:0 4px 14px rgba(200,160,60,.12)}
+.wish:nth-child(n+3){border-width:1px;box-shadow:none}
+.wh{display:flex;align-items:center;gap:10px}
+.av{width:28px;height:28px;border-radius:50%;background:var(--soft);border:1px solid #f0d78e;display:flex;align-items:center;justify-content:center;font-size:12px;color:#a0601f}
+.wn{font-weight:700;font-size:14px;color:#6b2e0e}
+.ago{margin-left:auto;font-size:11px;color:#a3907d}
+.wt{font-family:'Noto Serif',serif;font-style:italic;font-size:14.5px;color:#4e3826;margin-top:10px;line-height:1.5;padding-right:20px}
+.q{position:absolute;right:16px;bottom:8px;font-family:'Noto Serif',serif;font-size:34px;color:#efe6d8;line-height:1}
+
+.bform{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;margin-bottom:18px;display:grid;gap:10px}
 .inp{display:flex;align-items:center;gap:10px;border:1px solid #f4dc96;background:#fffdf3;border-radius:16px;padding:0 14px}
 .inp svg{width:16px;height:16px;stroke:#c0712b;fill:none;stroke-width:1.8;flex:none}
 .inp input,textarea{flex:1;border:0;background:transparent;padding:14px 0;font-family:'Cinzel',serif;font-size:13px;color:var(--brown);outline:none;width:100%}
-textarea{border:1px solid #f4dc96;background:#fffdf3;border-radius:16px;padding:14px;resize:vertical;min-height:84px}
+.bform .inp input{padding:12px 0}
+textarea{border:1px solid #f4dc96;background:#fffdf3;border-radius:16px;padding:14px;resize:vertical;min-height:84px;font-family:'Cinzel',serif;font-size:13px;color:var(--brown);outline:none;width:100%}
+.bform textarea{min-height:70px}
 ::placeholder{color:#b9aa98}
-.att{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.att button{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 8px;border-radius:16px;border:1px solid #f4dc96;background:#fff;font-family:'Cinzel',serif;font-size:12.5px;color:#9a8a78;cursor:pointer;line-height:1.3;transition:.25s}
-.att button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;flex:none}
-.att button.on{background:var(--saffron);border-color:var(--saffron);color:#fff;font-weight:700;box-shadow:0 6px 14px rgba(184,82,12,.3)}
-.gc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-.gc button{padding:11px 0;border-radius:12px;border:1px solid #f4dc96;background:#fff;font-family:'Cinzel',serif;font-size:14px;color:#5a3a22;cursor:pointer;transition:.25s}
-.gc button.on{background:var(--saffron);border-color:var(--saffron);color:#fff;font-weight:700}
-.send{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;padding:16px;border-radius:18px;background:linear-gradient(90deg,#25d366,#1fbe5a);color:#fff;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.05em;box-shadow:0 8px 18px rgba(34,197,94,.3);transition:transform .25s}
-.send:hover{transform:translateY(-2px)}
-.send svg{width:18px;height:18px}
-.rcp{text-align:center;margin-top:14px;font-size:10px;letter-spacing:.12em;color:#8a7766;font-weight:600}
-.rcp a{display:inline-block;margin:6px 6px 0;font-family:ui-monospace,monospace;font-size:13px;color:#2a1a10;letter-spacing:.04em}
+.bbtn{border:0;cursor:pointer;padding:13px;border-radius:14px;background:var(--saffron);color:#fff;font-family:'Cinzel',serif;font-weight:700;font-size:13px;letter-spacing:.08em;transition:opacity .25s}
+.bbtn:disabled{opacity:.6}
+.bnote{font-size:11px;color:#a3907d;text-align:center;min-height:14px}
+.empty{text-align:center;font-family:'Noto Serif',serif;font-style:italic;color:#8a7766;padding:14px}
+.more{display:block;margin:6px auto 0;background:none;border:1px solid #e3c27a;border-radius:30px;padding:10px 26px;font-family:'Cinzel',serif;font-size:12px;letter-spacing:.12em;color:#7a3d10;cursor:pointer}
+.more:hover{background:#f8ecd8}
 
-/* ---------- 6. FOOTER ---------- */
+/* ---------- 7. FOOTER ---------- */
 #closing{text-align:center;padding:70px 30px 80px}
 .mcircle{width:56px;height:56px;margin:0 auto;border-radius:50%;background:#fff;border:1px solid #e9dcc8;display:flex;align-items:center;justify-content:center;font-size:14px;color:#5a3a22;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 #closing p{font-size:13.5px;color:#8a7766;line-height:1.55;margin:22px auto 0;max-width:280px}
@@ -411,21 +360,22 @@ textarea{border:1px solid #f4dc96;background:#fffdf3;border-radius:16px;padding:
 
 .hero-in>*{
   opacity:0;
-  transform:translateY(22px);
+  transform:translateY(16px);
   will-change:transform,opacity;
 }
 body.loaded .hero-in>*{
-  animation:heroUp .95s cubic-bezier(0.22,1,0.36,1) forwards;
+  animation:heroUp .85s cubic-bezier(0.22,1,0.36,1) forwards;
 }
-body.loaded .hero-in>*:nth-child(1){animation-delay:.15s}
-body.loaded .hero-in>*:nth-child(2){animation-delay:.38s}
-body.loaded .hero-in>*:nth-child(3){animation-delay:.62s}
-body.loaded .hero-in>*:nth-child(4){animation-delay:.85s}
-body.loaded .hero-in>*:nth-child(5){animation-delay:1.08s}
-body.loaded .hero-in>*:nth-child(6){animation-delay:1.32s}
+body.loaded .hero-in>*:nth-child(1){animation-delay:.1s}
+body.loaded .hero-in>*:nth-child(2){animation-delay:.25s}
+body.loaded .hero-in>*:nth-child(3){animation-delay:.42s}
+body.loaded .hero-in>*:nth-child(4){animation-delay:.58s}
+body.loaded .hero-in>*:nth-child(5){animation-delay:.72s}
+body.loaded .hero-in>*:nth-child(6){animation-delay:.86s}
+body.loaded .hero-in>*:nth-child(7){animation-delay:1.02s}
 
 @keyframes heroUp{
-  from{opacity:0;transform:translateY(22px)}
+  from{opacity:0;transform:translateY(16px)}
   to{opacity:1;transform:translateY(0)}
 }
 @media(prefers-reduced-motion:reduce){
@@ -435,23 +385,8 @@ body.loaded .hero-in>*:nth-child(6){animation-delay:1.32s}
 </style>
 </head>
 <body>
-<!-- Audio element configured to loop -->
+<!-- Background music configured to start at 45s and loop -->
 <audio id="bgMusic" src="music.mp3" preload="auto" loop playsinline></audio>
-
-<!-- Floating Music Toggle Button -->
-<button class="music-btn" id="musicBtn" aria-label="Play Music" title="Play / Pause Music">
-  <div class="disc">
-    <svg viewBox="0 0 24 24" class="icon-play">
-      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
-    </svg>
-    <svg viewBox="0 0 24 24" class="icon-mute" style="display:none">
-      <path d="M4.27 3L3 4.27l9 9v.28c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4v-1.73l4.73 4.73c-.56.46-1.24.78-1.99.92v2.02c1.3-.23 2.49-.86 3.44-1.73L19.73 21 21 19.73 4.27 3zM14 7h4V3h-6v5.18l2 2V7z"/>
-    </svg>
-  </div>
-  <span class="music-wave">
-    <i></i><i></i><i></i><i></i>
-  </span>
-</button>
 
 <!-- SVG Gradients for Petals & Butterflies -->
 <svg width="0" height="0" style="position:absolute;visibility:hidden" aria-hidden="true">
@@ -495,26 +430,29 @@ body.loaded .hero-in>*:nth-child(6){animation-delay:1.32s}
 /* ============ EDIT ALL TEXT HERE ============ */
 const DATA = {
   shloka: "॥ श्री गणेशाय नमः ॥",
+  invitationText: "We request the honor of your gracious presence on the auspicious occasion of the wedding celebration of",
   groom: { name: "Ashish", parents: "Son of Mrs Rama Kanti & Late M.L. Rawat" },
   bride: { name: "Arushi", parents: "Daughter of Mrs Maya Chandra & Mr Sunil Chandra" },
-  heroDate: "Saturday, 12 December 2026",
-  heroTime: "6:00 PM",
   countdownTo: "2026-12-12T18:00:00+05:30",
   venues: [
-    { label: "Auspicious Venue", name: "The Grand CASA", address: "Near Delhi Public School, Shaheed Path, Lucknow",
+    { label: "Wedding Venue", name: "The Grand CASA", address: "Near Delhi Public School, Shaheed Path, Lucknow",
       map: "The Grand CASA, Shaheed Path, Lucknow" },
     { label: "Reception Venue", name: "Amar Milan Utsav Lawn", address: "Near Sky Public School, Bijnaur Road, Sarojini Nagar, Lucknow",
       map: "Amar Milan Utsav Lawn, Bijnaur Road, Sarojini Nagar, Lucknow" }
   ],
   program: [
-    { icon: "cal",   label: "The Date",            value: "Saturday, 12 December 2026", desc: "Auspicious wedding ceremony" },
-    { icon: "clock", label: "Baraat",              value: "6:00 PM",                    desc: "The royal procession arrives" },
-    { icon: "heart", label: "Dinner",              value: "8:00 PM Onwards",            desc: "Culinary feast, music & blessings" },
-    { icon: "cal",   label: "Reception",           value: "Tuesday, 15 December 2026",  desc: "An evening of celebration" },
-    { icon: "clock", label: "Reception Timings",   value: "7:00 PM Onwards",            desc: "Amar Milan Utsav Lawn, Lucknow" }
+    { icon: "cal",   label: "The Date",            value: "December 12th 2026<span class=\"sub-day\">Saturday</span>", desc: "Auspicious wedding ceremony" },
+    { icon: "clock", label: "Baraat",              value: "6:00 PM Onwards", desc: "The royal procession arrives" },
+    { icon: "heart", label: "Dinner",              value: "8:00 PM Onwards", desc: "Culinary feast, music & blessings" },
+    { icon: "cal",   label: "Reception",           value: "December 15th 2026<span class=\"sub-day\">Tuesday</span>",  desc: "An evening of celebration" },
+    { icon: "clock", label: "Reception Timings",   value: "7:00 PM Onwards", desc: "Amar Milan Utsav Lawn, Lucknow" }
   ],
   couplePhoto: "couple.jpg",
-  rsvp: { family: "Rawat Family", phones: ["8953043463", "9599425181"], cc: "91" },
+  rsvp: { family: "Rawat family", phone: "9599428151" },
+  blessings: {
+    endpoint: "",
+    show: 2
+  },
   monogram: "A & A",
   closing: "We seek your blessings and gracious presence as we begin our new journey together."
 };
@@ -527,14 +465,11 @@ const I = {
   pin:'<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
   ext:'<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
   spark:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 3v4M17 5h4M5 17v3M3.5 18.5h3"/>',
-  user:'<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/>',
-  ok:'<circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/>',
-  no:'<circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/>'
+  user:'<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/>'
 };
 const ic = k => `<svg viewBox="0 0 24 24">${I[k]}</svg>`;
 const sparkHead = `<div class="spark"><i></i>${ic('spark')}<i></i></div>`;
 const mapUrl = q => "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(q);
-const waUrl = (n, m) => `https://wa.me/${DATA.rsvp.cc}${n}?text=${encodeURIComponent(m)}`;
 const WA = '<svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.7-.3z"/></svg>';
 
 /* --- Petals config for minimal shower --- */
@@ -573,7 +508,7 @@ const bflySVG = grad => `
 /* --- sections --- */
 const S = [];
 
-/* 1. HERO with centered text, petal shower, and butterflies at bottom */
+/* 1. HERO with centered text, shloka below Ganesh ji, petal shower & butterflies */
 S.push(`<section id="hero">
   <div class="petals-shower" aria-hidden="true">
     ${petals.map(p => `
@@ -593,16 +528,17 @@ S.push(`<section id="hero">
 
   <div class="hero-in">
     <p class="shloka">${DATA.shloka}</p>
+    <p class="invitation-text">${DATA.invitationText}</p>
     <h1 class="hn">${DATA.groom.name}</h1>
     <p class="par">${DATA.groom.parents}</p>
-    <div class="amp"><i></i><b>✦</b>&amp;<b>✦</b><i></i></div>
-    <h1 class="hn" style="margin-top:0">${DATA.bride.name}</h1>
+    <div class="weds"><i></i><span>weds</span><i></i></div>
+    <h1 class="hn">${DATA.bride.name}</h1>
     <p class="par">${DATA.bride.parents}</p>
   </div>
 </section>`);
 
-/* 2. PROGRAM */
-S.push(`<section id="program"><div class="rv">${sparkHead}<p class="kicker">Sacred Auspicious Program</p><h2 class="big">Program of Celebrations</h2></div>
+/* 2. PROGRAM (Without "Program of Celebrations" heading) */
+S.push(`<section id="program"><div class="rv">${sparkHead}<p class="kicker">Sacred Auspicious Program</p></div>
   <div class="outer rv"><div class="inner">${DATA.program.map((e,i)=>`${i?'<div class="sep"><i></i>✦<i></i></div>':''}
     <div class="ev"><div class="ic">${ic(e.icon)}</div><p class="lb">${e.label.toUpperCase()}</p><p class="val">${e.value}</p><p class="ds">${e.desc}</p></div>`).join('')}
   </div></div></section>`);
@@ -613,7 +549,7 @@ S.push(`<section id="muhurtham"><p class="kicker rv">The Auspicious Muhurtham</p
   ${DATA.venues.map(v=>`<div class="vcard rv"><div class="vlabel">${ic('pin')}${v.label.toUpperCase()}</div><h3>${v.name}</h3><p>${v.address}</p>
     <a class="vbtn" href="${mapUrl(v.map)}" target="_blank" rel="noopener">${ic('ext')}Get Directions</a></div>`).join('')}</section>`);
 
-/* 4. MEMORIES (COUPLE FRAME WITH ONLY COUPLE NAME) */
+/* 4. MEMORIES (COUPLE FRAME) */
 S.push(`<section id="memories">
   <div class="mem rv">
     ${sparkHead}
@@ -626,26 +562,37 @@ S.push(`<section id="memories">
   </div>
 </section>`);
 
-/* 5. RSVP */
-S.push(`<section id="rsvp"><div class="rs rv">${sparkHead}<h2>RSVP</h2>
-  <p class="intro">Kindly respond to let <b>${DATA.groom.name} & ${DATA.bride.name}</b> know if you can join</p>
-  <label class="fl">YOUR FULL NAME <em>*</em></label><div class="inp">${ic('user')}<input id="rName" placeholder="E.G. SAMEER & FAMILY"></div>
-  <label class="fl">WILL YOU ATTEND?</label>
-  <div class="att" id="rAtt"><button class="on" data-v="Joyfully Accept">${ic('ok')}Joyfully Accept</button><button data-v="Regretfully Decline">${ic('no')}Regretfully Decline</button></div>
-  <label class="fl">NUMBER OF GUESTS</label>
-  <div class="gc" id="rCnt">${["1","2","3","4","5+"].map((n,i)=>`<button ${i?'':'class="on"'} data-v="${n}">${n}</button>`).join('')}</div>
-  <label class="fl">HEARTFELT WISH <small>(OPTIONAL)</small></label><textarea id="rMsg" placeholder="SHARE A BLESSING OR NOTE FOR THE COUPLE..."></textarea>
-  <a class="send" id="rSend" target="_blank" rel="noopener">${WA}SEND RSVP VIA WHATSAPP</a>
-  <p class="rcp">RSVP · ${DATA.rsvp.family.toUpperCase()}<br>${DATA.rsvp.phones.map(n=>`<a href="${waUrl(n,`Namaste ${DATA.rsvp.family} 🙏`)}" target="_blank" rel="noopener">${DATA.rsvp.cc}${n}</a>`).join('')}</p>
-  </div></section>`);
+/* 5. RSVP (Clean contact card) */
+S.push(`<section id="rsvp">
+  <div class="rs rv" style="text-align:center;">
+    ${sparkHead}
+    <h2>RSVP</h2>
+    <p class="rsvp-family">${DATA.rsvp.family}</p>
+    <p class="rsvp-contact">Contact details: <a href="tel:+91${DATA.rsvp.phone}" class="rsvp-phone">${DATA.rsvp.phone}</a></p>
+    <div style="margin-top:14px;">
+      <a href="https://wa.me/91${DATA.rsvp.phone}?text=Namaste%20Rawat%20family%20%F0%9F%99%8F" target="_blank" rel="noopener" class="rsvp-wa-pill">${WA}Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>`);
 
-/* 6. CLOSING */
+/* 6. SHARE A BLESSING OR NOTE FOR THE COUPLE */
+S.push(`<section id="wishes">
+  <div class="rv">${sparkHead}<p class="wtitle">Share a blessing or note for the couple</p></div>
+  <form class="bform rv" id="bform">
+    <div class="inp">${ic('user')}<input id="bName" maxlength="40" placeholder="YOUR NAME" required></div>
+    <textarea id="bText" maxlength="300" placeholder="SHARE YOUR BLESSINGS FOR ${DATA.groom.name.toUpperCase()} & ${DATA.bride.name.toUpperCase()}..." required></textarea>
+    <button class="bbtn" id="bBtn">SEND BLESSINGS</button><p class="bnote" id="bNote"></p>
+  </form>
+  <div id="wlist"></div><button class="more" id="bMore" hidden>VIEW MORE</button>
+</section>`);
+
+/* 7. CLOSING */
 S.push(`<section id="closing"><div class="rv"><div class="mcircle">${DATA.monogram}</div><p>${DATA.closing}</p>
   <div class="heart"><i></i><svg viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11z"/></svg><i></i></div></div></section>`);
 
 document.getElementById("app").innerHTML = S.join("");
 
-/* --- behaviour --- */
+/* --- Behaviour --- */
 const $ = s => document.querySelector(s);
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .15 });
 document.querySelectorAll(".rv").forEach(el => io.observe(el));
@@ -657,25 +604,55 @@ const end = new Date(DATA.countdownTo).getTime(), cells = document.querySelector
   if (left) setTimeout(tick, 1000);
 })();
 
-const pick = id => $(id + " .on").dataset.v;
-["#rAtt", "#rCnt"].forEach(id => $(id).addEventListener("click", e => {
-  const b = e.target.closest("button"); if (!b) return;
-  $(id).querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b)); upd();
-}));
-function upd(){
-  const name = $("#rName").value.trim() || "Guest", wish = $("#rMsg").value.trim();
-  $("#rSend").href = waUrl(DATA.rsvp.phones[0],
-    `🙏 RSVP — Wedding of ${DATA.groom.name} & ${DATA.bride.name}\nName: ${name}\nAttending: ${pick("#rAtt")}\nGuests: ${pick("#rCnt")}` + (wish ? `\nWish: ${wish}` : ""));
+/* --- Blessings wall --- */
+const B = DATA.blessings, LS = "blessings-" + DATA.groom.name + DATA.bride.name;
+let all = [], expanded = false;
+const esc = t => String(t).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const ago = ts => { const m = Math.floor((Date.now() - ts) / 6e4);
+  return m < 1 ? "just now" : m < 60 ? m + "m ago" : m < 1440 ? Math.floor(m / 60) + "h ago" : Math.floor(m / 1440) + "d ago"; };
+const local = { get(){ try { return JSON.parse(localStorage.getItem(LS)) || []; } catch(e){ return []; } },
+  set(v){ try { localStorage.setItem(LS, JSON.stringify(v)); } catch(e){} } };
+async function load(){
+  if (B.endpoint) { try { all = await (await fetch(B.endpoint)).json(); } catch(e){ all = local.get(); } } else all = local.get();
+  all.sort((a, b) => b.ts - a.ts); render();
 }
-["#rName", "#rMsg"].forEach(id => $(id).addEventListener("input", upd)); upd();
+function render(){
+  const list = expanded ? all : all.slice(0, B.show);
+  const wlist = $("#wlist"), bMore = $("#bMore");
+  if (!wlist) return;
+  wlist.innerHTML = all.length ? list.map(w => `<div class="wish"><div class="wh"><span class="av">${esc(w.name[0] || "?").toUpperCase()}</span>
+    <span class="wn">${esc(w.name)}</span><span class="ago">${ago(w.ts)}</span></div><p class="wt">“${esc(w.text)}”</p><span class="q">”</span></div>`).join("")
+    : '<p class="empty">Be the first to bless the couple ✨</p>';
+  if (bMore) {
+    bMore.hidden = all.length <= B.show;
+    bMore.textContent = expanded ? "VIEW LESS" : `VIEW MORE (${all.length - B.show})`;
+  }
+}
+const bMoreBtn = $("#bMore");
+if (bMoreBtn) {
+  bMoreBtn.onclick = () => { expanded = !expanded; render(); if (!expanded) $("#wishes").scrollIntoView(); };
+}
+const bform = $("#bform");
+if (bform) {
+  bform.addEventListener("submit", async e => {
+    e.preventDefault();
+    const w = { name: $("#bName").value.trim(), text: $("#bText").value.trim(), ts: Date.now() };
+    if (!w.name || !w.text) return;
+    const bBtn = $("#bBtn"), bNote = $("#bNote");
+    bBtn.disabled = true; bNote.textContent = "Sending…";
+    let ok = true;
+    if (B.endpoint) { try { await fetch(B.endpoint, { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(w) }); } catch(err){ ok = false; } }
+    if (!B.endpoint || !ok) local.set([w, ...local.get()]);
+    all.unshift(w); expanded = false; render();
+    bform.reset(); bBtn.disabled = false;
+    bNote.textContent = ok ? "Thank you for your blessings 🙏" : "Saved on this device — couldn't reach the server.";
+  });
+}
+load();
 
-/* --- Music Player Control (starts at 45 seconds) --- */
+/* --- Background Music (Starts from 45s without button) --- */
 const audio = document.getElementById("bgMusic");
-const mBtn = document.getElementById("musicBtn");
-const iconPlay = mBtn.querySelector(".icon-play");
-const iconMute = mBtn.querySelector(".icon-mute");
 let seekedTo45 = false;
-let musicStarted = false;
 
 function set45s() {
   if (!seekedTo45) {
@@ -685,51 +662,20 @@ function set45s() {
     } catch(e) {}
   }
 }
-
 audio.addEventListener("loadedmetadata", set45s);
 audio.addEventListener("canplay", set45s);
-
-function updateMusicUI(playing) {
-  if (playing) {
-    mBtn.classList.add("playing");
-    iconPlay.style.display = "block";
-    iconMute.style.display = "none";
-    mBtn.setAttribute("aria-label", "Pause Music");
-  } else {
-    mBtn.classList.remove("playing");
-    iconPlay.style.display = "none";
-    iconMute.style.display = "block";
-    mBtn.setAttribute("aria-label", "Play Music");
-  }
-}
 
 function playMusic() {
   set45s();
   const p = audio.play();
   if (p !== undefined) {
-    p.then(() => {
-      musicStarted = true;
-      updateMusicUI(true);
-    }).catch(() => {
-      // Autoplay blocked by browser policy; will trigger on user interaction
-      updateMusicUI(false);
+    p.catch(() => {
+      // Autoplay restricted by browser policy; starts upon first user touch/click/scroll
     });
   }
 }
 
-function toggleMusic(e) {
-  if (e) e.stopPropagation();
-  if (audio.paused) {
-    playMusic();
-  } else {
-    audio.pause();
-    updateMusicUI(false);
-  }
-}
-
-mBtn.addEventListener("click", toggleMusic);
-
-// If browser blocks initial autoplay, start playing from 45s on first touch/click/scroll
+// Fallback to start music on first user touch/scroll/click
 const startOnFirstGesture = () => {
   if (audio.paused) {
     playMusic();
@@ -751,7 +697,7 @@ const revealPage = () => {
     setTimeout(() => { try { loader.remove(); } catch(e){} }, 750);
   }
   document.body.classList.add("loaded");
-  // Trigger music playback right as page reveals
+  // Start music automatically when invite starts
   playMusic();
 };
 
